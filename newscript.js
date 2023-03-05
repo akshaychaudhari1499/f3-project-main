@@ -109,5 +109,5 @@ submit.addEventListener('click', (e) =>{
     window.location.href = "./login.html";
 })
 if(window.localStorage.getItem('currentUser')){
-    window.location.href = 'shop/index.html';
+    window.location.href = './dashboard.html';
 }
