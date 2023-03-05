@@ -58,3 +58,33 @@ nav .brand {
 nav .nav-items a {
   margin: 0 1rem;
 }
+
+.cartProducts{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  place-items: center;
+ 
+  border: 1px solid rgb(11, 237, 98);
+}
+.container{  
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+img{
+  width:18rem;
+  height: 21rem;
+  border: 1px solid gainsboro;  
+}
+.item{
+  border: 1px solid blue;
+}
+.cartItem{
+  width:24rem;
+  height:fit-content;
+  line-height: 1.5;
+  border: 1px solid black;
+  padding: 1rem 1rem;
+  margin:2rem;
+  font-size: smaller;
+}

@@ -18,124 +18,156 @@
        jewelery=res.filter( (product)=>product.category==="jewelery");
       console.log(jewelery)
       electronics=res.filter( (product)=>product.category==="electronics");
-      console.log(electronics) 
-      
+      console.log(electronics)       
     
-      
-     
-      mens.map( (item)=>{
+      localStorage.setItem('response',JSON.stringify(res))
+      function getbuttons(){
+
+        mens.map( (item)=>{
        
-        menClothing.innerHTML+= `<div class="item">
+          menClothing.innerHTML+= `<div class="item">
+          <div class='siblingcart'>
+          <img src=${item.image} alt="Item" />
+          <div class="info">
+          <h5>${item.title}</h5>
+            <div class="row">
+              <div class="price">$${item.price}</div>
+              <div class="sized">S,M,L</div>
+            </div>
+            <div class="colors">
+              Colors:
+              <div class="row">
+                <div class="circle" style="background-color: #000"></div>
+                <div class="circle" style="background-color: #4938af"></div>
+                <div class="circle" style="background-color: #203d3e"></div>
+              </div>
+            </div>
+            <div class="row">Rating:${item.rating.rate}</div>
+          </div></div>
+          <button class="addBtn" >Add to Cart</button>
+          </div>`    
+         
+         
+          
+        }
+        )
+        
+        
+        
+        womens.map( (item)=>{
+        womenClothing.innerHTML+= `<div class="item">
+        <div class='siblingcart'>
+         <img src=${item.image} alt="Item" />
+         <div class="info">
+           <h5>${item.title}</h5>
+           <div class="row">
+            <div class="price">$${item.price}</div>
+            <div class="sized">S,M,L</div>
+           </div>
+           <div class="colors">
+           Colors:
+           <div class="row">
+            <div class="circle" style="background-color: #000"></div>
+            <div class="circle" style="background-color: #4938af"></div>
+            <div class="circle" style="background-color: #203d3e"></div>
+          </div>
+          </div>
+        <div class="row">Rating:${item.rating.rate}</div>
+        </div>
+        </div>
+        <button class="addBtn" >Add to Cart</button>
+        </div>`  
+      
+        
+      
+        }
+        
+        )
+        
+        jewelery.map( (item)=>{
+        jeweleryStore.innerHTML+= `<div class="item">
+        <div class='siblingcart'>
         <img src=${item.image} alt="Item" />
         <div class="info">
         <h5>${item.title}</h5>
+        <div class="row">
+          <div class="price">$${item.price}</div>
+          <div class="sized">S,M,L</div>
+        </div>
+        <div class="colors">
+          Colors:
           <div class="row">
-            <div class="price">$${item.price}</div>
-            <div class="sized">S,M,L</div>
+            <div class="circle" style="background-color: #000"></div>
+            <div class="circle" style="background-color: #4938af"></div>
+            <div class="circle" style="background-color: #203d3e"></div>
           </div>
-          <div class="colors">
-            Colors:
-            <div class="row">
-              <div class="circle" style="background-color: #000"></div>
-              <div class="circle" style="background-color: #4938af"></div>
-              <div class="circle" style="background-color: #203d3e"></div>
-            </div>
-          </div>
-          <div class="row">Rating:${item.rating.rate}</div>
         </div>
-        <button class="addBtn" >Add to Cart</button>
-        </div>`    
-       
-       
+        <div class="row">Rating:${item.rating.rate}</div>
+        </div>
+        </div>
+        <button class="addBtn">Add to Cart</button>
+        </div>`  
+        }
+        ) 
         
-      }
-      )
-      
-      
-      womens.map( (item)=>{
-      womenClothing.innerHTML+= `<div class="item">
-      <img src=${item.image} alt="Item" />
-      <div class="info">
-      <h5>${item.title}</h5>
-      <div class="row">
-        <div class="price">$${item.price}</div>
-        <div class="sized">S,M,L</div>
-      </div>
-      <div class="colors">
-        Colors:
+        electronics.map( (item)=>{
+        electronicsStore.innerHTML+= `<div class="item">
+        <div class='siblingcart'>
+       
+        <img src=${item.image} alt="Item" />
+        <div class="info">
+        <h5>${item.title}</h5>
         <div class="row">
-          <div class="circle" style="background-color: #000"></div>
-          <div class="circle" style="background-color: #4938af"></div>
-          <div class="circle" style="background-color: #203d3e"></div>
+          <div class="price">$${item.price}</div>
+          <div class="sized">S,M,L</div>
         </div>
-      </div>
-      <div class="row">Rating:${item.rating.rate}</div>
-      </div>
-      <button class="addBtn" >Add to Cart</button>
-      </div>`  
-    
-      
-    
-      }
-      
-      )
-      
-      jewelery.map( (item)=>{
-      jeweleryStore.innerHTML+= `<div class="item">
-      <img src=${item.image} alt="Item" />
-      <div class="info">
-      <h5>${item.title}</h5>
-      <div class="row">
-        <div class="price">$${item.price}</div>
-        <div class="sized">S,M,L</div>
-      </div>
-      <div class="colors">
-        Colors:
-        <div class="row">
-          <div class="circle" style="background-color: #000"></div>
-          <div class="circle" style="background-color: #4938af"></div>
-          <div class="circle" style="background-color: #203d3e"></div>
+        <div class="colors">
+          Colors:
+          <div class="row">
+            <div class="circle" style="background-color: #000"></div>
+            <div class="circle" style="background-color: #4938af"></div>
+            <div class="circle" style="background-color: #203d3e"></div>
+          </div>
         </div>
-      </div>
-      <div class="row">Rating:${item.rating.rate}</div>
-      </div>
-      <button class="addBtn">Add to Cart</button>
-      </div>`  
-      }
-      ) 
-      
-      electronics.map( (item)=>{
-      electronicsStore.innerHTML+= `<div class="item">
-      <img src=${item.image} alt="Item" />
-      <div class="info">
-      <h5>${item.title}</h5>
-      <div class="row">
-        <div class="price">$${item.price}</div>
-        <div class="sized">S,M,L</div>
-      </div>
-      <div class="colors">
-        Colors:
-        <div class="row">
-          <div class="circle" style="background-color: #000"></div>
-          <div class="circle" style="background-color: #4938af"></div>
-          <div class="circle" style="background-color: #203d3e"></div>
+        <div class="row">Rating:${item.rating.rate}</div>
         </div>
-      </div>
-      <div class="row">Rating:${item.rating.rate}</div>
-      </div>
-      <button class="addBtn" class='adbtn' >Add to Cart</button>
-      </div>`  
+        </div>
+        <button class="addBtn">Add to Cart</button>
+        </div>`  
+        }
+        )
       }
-      )
+      getbuttons();
+     let cart=document.querySelectorAll('.addBtn')
+     
+       let cartitems=[];
+       let productinfo=[];
+
+        console.log(cart);
+        let itemTitle , price;
+        for(let i=0; i<cart.length; i++){
+          console.log('addtocart')
+          cart[i].addEventListener('click',(e)=>{
+           itemTitle=e.target.previousElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerText;
+            price=e.target.previousElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerText;
+            productinfo.push({'itemTitle':itemTitle, 'price':price}            
+              )
+              localStorage.setItem('specification', JSON.stringify(productinfo))
+            console.log(productinfo)
+            cartitems.push(e.target.previousElementSibling.innerHTML);
+           // console.log(cartitems)
+            localStorage.setItem('cart', JSON.stringify(cartitems))
+          })
+       
+        }
+       // let addtocart=document.querySelectorAll('.addBtn');
+        
+      
     
     
-    
-    
-    const btns=document.querySelectorAll(
-    '.btns');
+    const btns=document.querySelectorAll('.btns');
     const products=document.querySelectorAll('.items');
     
-    console.log(products);
     for(let i=0;i<btns.length;i++) {
     btns[i].addEventListener('click',(e)=>{
         e.preventDefault();
@@ -164,8 +196,7 @@
     }
     
         })
-    })
-    
+    })  
     
     
     
@@ -175,28 +206,26 @@
     const search=document.getElementById('search');
     
     search.addEventListener("keyup",(e)=>{
-        e.preventDefault();
-        
+        e.preventDefault();        
         const searchValue=search.value;
         console.log(searchValue);
-        for(i=0;i<products.length;i++){
-            if(products[i].classList.contains(searchValue)){
-    products[i].style.display='flex';
-            }
-            else if(searchValue==''){
-                products[i].style.display='flex';
-            }
-            else{
-                
-                products[i].style.display='none'; 
-              
-            }
-        }
+//         res.forEach(data=>{
+// if(data.title.includes(search.value)){
+// console.log(data.title);
+// }
+         for(i=0;i<products.length;i++){
+           if(products[i].classList.contains(searchValue)){
+        console.log("insideif")
+            products[i].style.display='flex';
+               }
+             else{                
+            products[i].style.display='none'; 
+             }
+           }
+        })
+        
     })
-    return products;
+   
     
-    })
     
-
-
- 
+    
