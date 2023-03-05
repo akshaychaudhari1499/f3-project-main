@@ -150,8 +150,9 @@
           cart[i].addEventListener('click',(e)=>{
            itemTitle=e.target.previousElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerText;
             price=e.target.previousElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerText;
-            productinfo.push({'itemTitle':itemTitle, 'price':price}            
-              )
+            productinfo.push({'itemTitle':itemTitle, 'price':price})
+              cart[i].style.backgroundColor='green'; 
+              cart[i].innerText='Added to cart'; 
               localStorage.setItem('specification', JSON.stringify(productinfo))
             console.log(productinfo)
             cartitems.push(e.target.previousElementSibling.innerHTML);
@@ -202,9 +203,9 @@
     
     }
     
-    
+  
     const search=document.getElementById('search');
-    
+  
     search.addEventListener("keyup",(e)=>{
         e.preventDefault();        
         const searchValue=search.value;
@@ -218,8 +219,12 @@
         console.log("insideif")
             products[i].style.display='flex';
                }
-             else{                
-            products[i].style.display='none'; 
+               else if(searchValue===''){
+                products[0].style.display='flex';
+               }
+             else{                 
+            products[i].style.display='none';
+        
              }
            }
         })
