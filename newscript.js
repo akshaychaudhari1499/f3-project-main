@@ -106,8 +106,8 @@ submit.addEventListener('click', (e) =>{
     users.push(userData);
     console.log(users);
     window.localStorage.setItem('users', JSON.stringify(users));
-    window.location.href = "./login.html";
+    window.location.href = "login.html";
 })
 if(window.localStorage.getItem('currentUser')){
-    window.location.href = './dashboard.html';
+    window.location.href = 'dashboard.html';
 }

@@ -33,7 +33,7 @@ loginSubmit.addEventListener('click', (e) => {
         else {
             loginEmailWarning.innerHTML = "";
             loginPasswordWarning.innerHTML = "";
-            window.location.href = './dashboard.html';
+            window.location.href = 'dashboard.html';
         }
     });
     currentUser.token = generateToken();
@@ -44,7 +44,7 @@ loginSubmit.addEventListener('click', (e) => {
     
 })
 if(window.localStorage.getItem('currentUser')){
-    window.location.href = '../shop/index.html';
+    window.location.href = 'dashboard.html';
 }
 function generateToken() {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
