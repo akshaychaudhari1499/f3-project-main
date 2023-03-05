@@ -1,11 +1,4 @@
-const signUpPage = document.querySelector('#signupPage');
-const loginPage = document.querySelector('#loginPage');
-signUpPage.addEventListener('click', () => {
-    window.location.href = "./index.html"
-})
-loginPage.addEventListener('click', () => {
-    window.location.href = "./login.html"
-})
+
 
 let teacher = JSON.parse(window.localStorage.getItem('currentUser'));
 console.log(teacher.firstname);
