@@ -22,7 +22,7 @@ loginSubmit.addEventListener('click', (e) => {
         if (data.email === loginEmail.value && data.password === loginPassword.value) {
             countEmail++;
             currentUser.email = data.email;
-            currentUser.name = data.name;
+            currentUser.firstname = data.firstname;
             currentUser.password = data.password;
         }
         if (countEmail == 0) {

@@ -8,12 +8,12 @@ loginPage.addEventListener('click', () => {
 })
 
 let teacher = JSON.parse(window.localStorage.getItem('currentUser'));
-console.log(teacher.password);
+console.log(teacher.firstname);
 const teacherName = document.querySelector('.teacherName');
 const teacherEmail = document.querySelector('.teacherEmail');
 const users = JSON.parse(window.localStorage.getItem('users'));
 
-teacherName.innerHTML = `Welcome back <strong>${teacher.name}</strong>!`
+teacherName.innerHTML = `Welcome back <strong>${teacher.firstname}</strong>!`
 teacherEmail.innerHTML = `Your Email ID: ${teacher.email}`
 
 const oldPassword = document.querySelector('#oldPassword');
@@ -90,7 +90,7 @@ change.addEventListener('click',(e) =>{
     
 })
 logout.addEventListener('click', ()=>{
-    localStorage.clear();
+    localStorage.removeItem('currentUser');
     console.log('cleared');
     window.location.href = './login.html';
 })

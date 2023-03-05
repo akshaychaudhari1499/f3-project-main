@@ -1,6 +1,7 @@
 const firstname = document.querySelector('#exampleInputName1');
 const lastname = document.querySelector('#exampleInputName2');
 const firstnameWarning = document.querySelector('#firstnameHelp');
+const lastnameWarning = document.querySelector('#lastnameHelp');
 const email = document.querySelector('#exampleInputEmail1');
 const emailWarning = document.querySelector('#emailHelp');
 const password = document.querySelector('#exampleInputPassword1');
@@ -28,24 +29,24 @@ console.log(users)
 submit.addEventListener('click', (e) =>{
     e.preventDefault();
     //name validation
-    // const firstnameArray = firstname.value.split(' ');
-    // if(firstnameArray.length<2){
-    //     firstnameWarning.innerHTML = 'Please enter name';
-    //     firstnameWarning.style.color = 'red';
-    //     return false;
-    // }
-    // else{
-    //     firstnameWarning.innerHTML = '';
-    // }
-    // const lastnameArray = lastname.value.split('');
-    // if(lastnameArray.length<2){
-    //     lastnameWarning.innerHTML = 'Please enter name';
-    //     lastnameWarning.style.color = 'red';
-    //     return false;
-    // }
-    // else{
-    //     lastnameWarning.innerHTML = '';
-    // }
+    
+    if(firstname.length<2){
+        firstnameWarning.innerHTML = 'Please enter name';
+        firstnameWarning.style.color = 'red';
+        return false;
+    }
+    else{
+        firstnameWarning.innerHTML = '';
+    }
+   
+    if(lastname.length<2){
+        lastnameWarning.innerHTML = 'Please enter name';
+        lastnameWarning.style.color = 'red';
+        return false;
+    }
+    else{
+        lastnameWarning.innerHTML = '';
+    }
     //Email Validation
     if(email.value.indexOf('@')<=0){
         emailWarning.innerHTML = 'Please enter valid email address';
