@@ -8,6 +8,13 @@ const userData = JSON.parse(window.localStorage.getItem('users'));
 console.log(userData);
 const currentUser = {};
 loginSubmit.addEventListener('click', (e) => {
+    
+    if(userData==null) {
+        alert("No User Exist with this Email and Password ! Please signup first")
+    }
+    else{
+        alert('LoginSuccess');
+    }
     e.preventDefault();
     let countEmail = 0;
     userData.map(data => {
@@ -26,12 +33,13 @@ loginSubmit.addEventListener('click', (e) => {
         else {
             loginEmailWarning.innerHTML = "";
             loginPasswordWarning.innerHTML = "";
-            window.location.href = '../shop/index.html';
+            window.location.href = './dashboard.html';
         }
     });
     currentUser.token = generateToken();
     console.log(currentUser);
-    alert('LoginSuccess');
+    
+    
     window.localStorage.setItem('currentUser', (JSON.stringify(currentUser)));
     
 })

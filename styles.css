@@ -58,3 +58,9 @@ nav .brand {
 nav .nav-items a {
   margin: 0 1rem;
 }
+.item{
+  margin-top: 0;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+}

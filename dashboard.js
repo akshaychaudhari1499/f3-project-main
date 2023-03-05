@@ -90,6 +90,7 @@ change.addEventListener('click',(e) =>{
     
 })
 logout.addEventListener('click', ()=>{
-    window.localStorage.removeItem('currentUser');
+    localStorage.clear();
+    console.log('cleared');
     window.location.href = './login.html';
 })
