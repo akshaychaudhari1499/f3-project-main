@@ -1,5 +1,3 @@
-
-
 let teacher = JSON.parse(window.localStorage.getItem('currentUser'));
 console.log(teacher.firstname);
 const teacherName = document.querySelector('.teacherName');
