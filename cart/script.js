@@ -75,9 +75,10 @@ let razorpay = document.getElementById("clickCheckout");
 razorpay.addEventListener("click", (e) => {
   e.preventDefault();
   parentCart.innerHTML =
-    "<h1>Congratulations! You have successfully placed your order<h1>";
+    "<h1 style='color:white'>Congratulations! You have successfully placed your order<h1>";
+  parentCart.style.background='black';
   localStorage.removeItem("cart");
   localStorage.removeItem("specification");
-  billsection.style.display="none";
-  totalbill.innerHTML = `<h1>Go ahead and Shop again, Add your favourite items to cart soon !</h1>`;
+  billItem.innerHTML=`<h1 style="color:white  ">Go ahead and Shop again, Add your favourite items to cart soon !</h1>`;
+  
 });
